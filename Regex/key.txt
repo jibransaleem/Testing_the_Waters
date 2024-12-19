@@ -1,0 +1,42 @@
+# FUNCTIONS IN RE MODULE
+#1) search	Returns a Match object if there is a match anywhere in the string
+#2) findall	Returns a list containing all matche
+#3) split	Returns a list where the string has been split at each match
+#4 ) sub	Replaces one or many matches with a string
+#re.finditer(pattern,string) search for the pos of the target
+#.span() - > given indices in tuple of match
+#.group() - > givens the pattern that has mactched in the target
+1)
+  # dot( . )
+       the dot (.) in regular expressions is used to match exactly one single character (except for newline characters). It doesn't match multiple characters or a sequence of characters.
+
+       For example:
+
+       "a.b" will match "axb", "a1b", "a b", etc., but only if there is exactly one character between 'a' and 'b'.
+       If you want to match multiple characters, you can use quantifiers like *, +, or {n,m} to specify how many characters the dot can match:
+
+        `a.*b → Matches "a" followed by any sequence of characters (including no characters) and then "b".
+
+        Example: "a123b", "ab", "a b", etc.
+        a.+b → Matches "a" followed by one or more characters and then "b".
+
+        Example: "a123b", "a b", etc., but not "ab".
+        a{3,5} → Matches exactly 3 to 5 occurrences of the character a.`
+# ^ -> starts with
+# $ -> ends with 
+# \d - >Returns a match where the string contains digits (numbers from 0-9)
+# [a-zA-Z] - > 	Returns a match for any character alphabetically between a and z, lower case OR upper case
+# \s	Returns a match where the string contains a white space character	"\s"	
+# \S	Returns a match where the string DOES NOT contain a white space character	"\S"
+if end with spec char , you may use [!@#$%^&*]$
+# {} -> In regular expressions, curly braces {} are used to specify quantifiers that define how many times a certain element (character or group) should appear in the match. The curly braces are placed right after the element that you're quantifying
+        General Syntax:
+        {n}: Matches exactly n occurrences of the preceding element.
+        {n,}: Matches n or more occurrences of the preceding element.
+        {n,m}: Matches between n and m occurrences of the preceding element (inclusive).
+        Example: \d{3}
+            Matches exactly 3 digits in a row (e.g., 123, 456, etc.).
+# \ use before char if want to escape :
+  eg : (xxx) where xxx is a three digits , use \(\d{3}\), [ \(   ,\)  ]wi;; escape the brackets
+
+#To match only a single space in a string, you should leave a literal space in the regular expression instead of using \s. The \s matches any whitespace character, such as spaces, tabs, or newlines, whereas a literal space matches exactly one space.
