@@ -40,3 +40,17 @@ if end with spec char , you may use [!@#$%^&*]$
   eg : (xxx) where xxx is a three digits , use \(\d{3}\), [ \(   ,\)  ]wi;; escape the brackets
 
 #To match only a single space in a string, you should leave a literal space in the regular expression instead of using \s. The \s matches any whitespace character, such as spaces, tabs, or newlines, whereas a literal space matches exactly one space.
+# \b->	Returns a match where the specified characters are at the beginning or at the end of a word
+(the "r" in the beginning is making sure that the string is being treated as a "raw string")	r"\bain"
+
+r"ain\b"	
+
+# -> \B	Returns a match where the specified characters are present, but NOT at the beginning (or at the end) of a word
+(the "r" in the beginning is making sure that the string is being treated as a "raw string")	r"\Bain"
+
+r"ain\B"
+
+# if in a string want all the pattern dont use $  in the end , as it will find the first one and stop
+# ? -> one or zero , https? ,means http or https 
+#{n,} -> atleast n 
+Ian a regular expression, \1 is a backreference. It refers to the first captured group in the pattern. 
